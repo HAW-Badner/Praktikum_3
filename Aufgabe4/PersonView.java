@@ -2,7 +2,7 @@ package Aufgabe4;
 
  /* Programm : PersonView.java
     Autoren  : Sönke Baumgarten, Sven Andris
-    Datum    : 09.12.2024
+    Datum    : 12.12.2024
  */
 
 import java.awt.BorderLayout;

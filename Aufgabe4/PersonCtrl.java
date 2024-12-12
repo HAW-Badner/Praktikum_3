@@ -48,9 +48,6 @@ public class PersonCtrl extends JFrame implements ActionListener{
         radButtonMs = new JRadioButton("Frau", true);
         radButtonNone = new JRadioButton("keine");
 
-        radButtonMr.addActionListener(this);            // Zuweisen zu Actionlistener
-        radButtonMs.addActionListener(this);
-        radButtonNone.addActionListener(this);
         ButtonGroup bgAdr = new ButtonGroup();          // Erstellen einer Buttongroup für die Radiobutton
         bgAdr.add(radButtonMr);                         // Hinzufügen der einzelnen Radiobuttons zur Buttongroup
         bgAdr.add(radButtonMs);
