@@ -9,7 +9,7 @@ import java.awt.Container;
 
 import javax.swing.JFrame;
 
-public class PersonView extends JFrame {
+public class PersonView extends JFrame{
 
     //constructors
     public PersonView(Person personToShow){
@@ -21,8 +21,10 @@ public class PersonView extends JFrame {
         c.setLayout(new BorderLayout());                            // Layout des Frames als Borderlayout
 
         c.add(new PersonPanel(personToShow),BorderLayout.WEST);     // Füge neues JPanel zu Frame hinzu an Position West
-        setSize(800,500);
-        setLocation(500,200);
+        setSize(600,300);
+        setLocation(600,200);
         setVisible(true);                                         // Showtime!
+        
+        
     }
 }

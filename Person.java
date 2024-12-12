@@ -10,6 +10,7 @@ public class Person {
     private String title;
     private String givenName;
     private String surname;
+    private PersonView myView;
 
     // constructors
     public Person(String address, String title, String givenName, String surname) {
@@ -17,6 +18,7 @@ public class Person {
         this.title = title;
         this.givenName = givenName;
         this.surname = surname;
+        this.myView = null;
     }
 
     // methods
@@ -26,6 +28,9 @@ public class Person {
 
     public void setAddress(String address) {
         this.address = address;
+        if (myView != null){
+            myView.repaint();
+        }
     }
 
     public String getTitle() {
@@ -34,6 +39,8 @@ public class Person {
 
     public void setTitle(String title) {
         this.title = title;
+        if (myView != null)
+            myView.repaint();
     }
 
     public String getGivenName() {
@@ -42,6 +49,8 @@ public class Person {
 
     public void setGivenName(String givenName) {
         this.givenName = givenName;
+        if (myView != null)
+            myView.repaint();
     }
 
     public String getSurname() {
@@ -50,10 +59,24 @@ public class Person {
 
     public void setSurname(String surname) {
         this.surname = surname;
+        if (myView != null)
+            myView.repaint();
+    }
+
+    public PersonView getMyView() {
+        return myView;
+    }
+
+    public void setMyView(PersonView myView) {
+        this.myView = myView;
     }
 
     public static void main(String[] args) {
-        Person kloebner = new Person("Herr", "Dr.", "Anton", "Klöbner");
+        Person kloebner = new Person("Frau", "Dr.", "Anton", "Klöbner");
         PersonView view = new PersonView(kloebner);
+        kloebner.setMyView(view); 
+        PersonCtrl ctrl = new PersonCtrl(kloebner);
     }
+
+
 }
