@@ -1,9 +1,10 @@
 package Aufgabe5;
 
-/* Programm : Person.java
-   Autoren  : Sönke Baumgarten, Sven Andris
-   Datum    : 12.12.2024
-*/
+/**
+ * This class models renters of flats in a building. 
+ * 
+ * @author DRK
+ */
 
 public class Renter {
 	
@@ -11,7 +12,7 @@ public class Renter {
 	private int squareMeter; // size of flat in m^2
 	private int persons;     // how many persons live in the flat
 	
-	
+
 	/**
 	 * Constructor getting all defined values.
 	 * @param name

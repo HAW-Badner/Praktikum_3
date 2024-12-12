@@ -1,12 +1,11 @@
 package Aufgabe4;
 
- /* Programm : PersonView.java
+ /* Programm : PersonCtrl.java
     Autoren  : Sönke Baumgarten, Sven Andris
     Datum    : 12.12.2024
  */
 
 
-import java.awt.Color;
 import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -39,8 +38,7 @@ public class PersonCtrl extends JFrame implements ActionListener{
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);        // Schließe fenster mit X
         Container c = getContentPane();
-        c.setBackground(Color.GRAY);
-        c.setLayout(new GridLayout(7, 1, 10, 10));  // TESTEN
+        c.setLayout(new GridLayout(7, 1, 10, 10));  // Wende Grid-Layout mit 7 Zeilen / 1 Spalten an
         
         
         // Radiobuttons fuer die Anrede
@@ -64,16 +62,16 @@ public class PersonCtrl extends JFrame implements ActionListener{
 
 
         // Textfelder für Vor - und Nachnamen
-        givenName = new JTextField("Vorname", 20);
+        givenName = new JTextField("Vorname", 20);  // Erstelle Textfelder für Namen.
         surname = new JTextField("Nachname", 20);
-        c.add(givenName);
+        c.add(givenName);                                        // Füge Textfeld dem Frame hinzu.
         c.add(surname);
 
 
         // OK - Button
-        okButton = new JButton("OK");
-        okButton.addActionListener(this);
-        c.add(okButton);
+        okButton = new JButton("OK");       // Erstelle Button zur Eingabebestätigung.
+        okButton.addActionListener(this);        // Subscribe to ok-Button.
+        c.add(okButton);                         // Füge Frame hinzu.
 
         setSize(300, 400);
         setLocation(100, 100);
@@ -85,7 +83,7 @@ public class PersonCtrl extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == okButton){
             // Anrede
-            if (radButtonMr.isSelected()){
+            if (radButtonMr.isSelected()){                              // Prüfe, welcher Radiobutton ausgewählt.  
                 personToShow.setAddress("Herr");
             }
             else if (radButtonMs.isSelected()){
@@ -95,7 +93,7 @@ public class PersonCtrl extends JFrame implements ActionListener{
                 personToShow.setAddress("");
             }
             else {
-                personToShow.setAddress("Frau");                // kann nicht auftreten, aber im Zweifel lieber "Frau"
+                personToShow.setAddress("Frau");                // kann nicht auftreten, aber im Zweifel lieber "Frau".
             }
 
             // Titel
@@ -105,7 +103,7 @@ public class PersonCtrl extends JFrame implements ActionListener{
             else if (coBoxTitle.getSelectedIndex() == 1){               // Index 1 = Dr.
                 personToShow.setTitle("Dr.");
             }
-            else if (coBoxTitle.getSelectedIndex() == 2){               // Index 2 = ProfDr.
+            else if (coBoxTitle.getSelectedIndex() == 2){               // Index 2 = Prof.Dr.
                 personToShow.setTitle("Prof.Dr.");
             }
 

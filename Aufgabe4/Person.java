@@ -30,8 +30,8 @@ public class Person {
 
     public void setAddress(String address) {
         this.address = address;
-        if (myView != null){
-            myView.repaint();
+        if (myView != null){        // Ist noch kein Frame erstellt, gibts nicht zum repainten.
+            myView.repaint();       // Wird etwas in der Person verändert, repaint das Frame.
         }
     }
 
@@ -76,9 +76,8 @@ public class Person {
     public static void main(String[] args) {
         Person kloebner = new Person("Frau", "Dr.", "Anton", "Klöbner");
         PersonView view = new PersonView(kloebner);
-        kloebner.setMyView(view); 
+        kloebner.setMyView(view);                       // Weise der ertsellten Person die Adresse des Frames zu.
+        @SuppressWarnings("unused")
         PersonCtrl ctrl = new PersonCtrl(kloebner);
     }
-
-
 }
