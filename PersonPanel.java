@@ -18,8 +18,7 @@ public class PersonPanel extends JPanel {
 
     @Override
     protected void paintComponent(Graphics g){
-        super.paintComponent(g);
-        System.out.println("Ich wurde aufgerufen");                                        // Never forget!
+        super.paintComponent(g);                                       // Never forget!
         Dimension d = getSize();
         g.setFont(new Font("Arial",Font.BOLD, 40));
         g.setColor(Color.BLACK);
