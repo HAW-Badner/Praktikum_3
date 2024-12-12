@@ -1,3 +1,5 @@
+package Aufgabe4;
+
 /* Programm : Person.java
    Autoren  : Sönke Baumgarten, Sven Andris
    Datum    : 09.12.2024

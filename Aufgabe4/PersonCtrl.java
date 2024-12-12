@@ -1,3 +1,11 @@
+package Aufgabe4;
+
+ /* Programm : PersonView.java
+    Autoren  : Sönke Baumgarten, Sven Andris
+    Datum    : 12.12.2024
+ */
+
+
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.GridLayout;

@@ -1,4 +1,11 @@
-import java.awt.Color;
+package Aufgabe4;
+
+ /* Programm : PersonView.java
+    Autoren  : Sönke Baumgarten, Sven Andris
+    Datum    : 09.12.2024
+ */
+
+ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
