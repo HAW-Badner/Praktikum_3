@@ -106,6 +106,16 @@ public class PersonCtrl extends JFrame implements ActionListener{
             else if (coBoxTitle.getSelectedIndex() == 2){               // Index 2 = Prof.Dr.
                 personToShow.setTitle("Prof.Dr.");
             }
+                // So schöner und robuster!
+                /*
+                String selectedTitle = (String)coBoxTitle.getSelectedItem();    // Lese Inhalt der Kombobox aus
+                if(selectedTitle.equals("kein")){                      // Bei Auswahl "kein" nicht schreiben
+                    personToShow.setTitle("");
+                }
+                else{                                                           // Ansonsten Inhalt der Kombpbox schreibenS
+                    personToShow.setTitle(selectedTitle);
+                }
+                */
 
             // Namen
             personToShow.setGivenName(givenName.getText());         // Vorname
