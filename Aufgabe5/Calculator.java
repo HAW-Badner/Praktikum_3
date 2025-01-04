@@ -37,7 +37,7 @@ public class Calculator extends JFrame implements ActionListener {
     private double result = 0;          // Attribut für den berechneten Betrag.
     private Renter[] renterArr;         
 
-    DecimalFormat decFormats = new DecimalFormat("#,##0.00$");  // Ertsellung des Formats für 2 Nachkommastellen.
+    private static final DecimalFormat decFormats = new DecimalFormat("#,##0.00$");  // Erstellung des Formats für 2 Nachkommastellen.
 
     // constructors
     public Calculator(Renter[] renterArr) {
@@ -74,10 +74,6 @@ public class Calculator extends JFrame implements ActionListener {
         textfCost = new JTextField(10);      // Erstelle Textfeld zur Eingabe des Betrags.  
         c.add(textfCost);                            // Füge zu Frame hinzu.
 
-        setSize(400, 400);
-        setLocation(100, 100);
-        setVisible(true);
-
         // OK - Button
         c.add(new JLabel(""));          // Platzhalterlabel für Gridlayout.
         okButton = new JButton("OK");   // Erstelle Button zur Eingabebestätigung.
@@ -88,6 +84,10 @@ public class Calculator extends JFrame implements ActionListener {
         c.add(new JLabel("Zu zahlender Betrag: "));         // Formatiertes Label zur Ergebnisausgabe.
         labelResult = new JLabel(decFormats.format(result));     // Auch hier formatierte Ausgabe, dass Startwert korrekt formatiert.
         c.add(labelResult);
+
+        setSize(400, 400);      
+        setLocation(100, 100);
+        setVisible(true);               // Gehört ganz ans Ende der Frame-Erstellung!
 
         // Berechnung
         sumOfFlats = renterArr.length;          // Berechne Anzahl der Wohnungen
@@ -104,8 +104,8 @@ public class Calculator extends JFrame implements ActionListener {
     // methods
     @Override
     public void actionPerformed(ActionEvent e) {
-        try {
-            if (e.getSource() == okButton) {
+        if (e.getSource() == okButton) {            // Erst Abfragen, ob man von okButton kommt, dann den try...
+            try {
                 double userInput = Double.parseDouble(textfCost.getText());         // Wandle Benutzereingabe in Typ double um.
 
                 // Pro Wohnung
@@ -127,11 +127,11 @@ public class Calculator extends JFrame implements ActionListener {
                 } else {
                     JOptionPane.showMessageDialog(this, "Daten inkonsistent", "Achtung!", JOptionPane.WARNING_MESSAGE);
                 }
-            }
+            
         } catch (NumberFormatException n) {     // Fange exception ab, wenn Usereingabe keine gültige Zahl ist.
             JOptionPane.showMessageDialog(this, "Eingegebener Wert ist keine gültige Zahl! Bitte wiederholen.", "DUBEL!!!", JOptionPane.ERROR_MESSAGE);
         }
-
+    }
     }
 
     public static void main(String[] args) {
