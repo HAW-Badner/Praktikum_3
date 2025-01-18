@@ -135,7 +135,6 @@ public class Calculator extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        @SuppressWarnings("unused")
-        Calculator test = new Calculator(Renter.rentersInPasadena);
+        new Calculator(Renter.rentersInPasadena);
     }
 }
